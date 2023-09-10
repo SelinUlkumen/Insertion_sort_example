@@ -1,4 +1,30 @@
 [22,27,16,2,18,6] -> Insertion Sort
 
-#SORU 1: Yukarı verilen dizinin sort türüne göre aşamalarını yazınız.
-#CEVAP 1: Dizinin ikinci elemanı başlangıç elemanı olarak seçilir. 
+SORU 1: Yukarı verilen dizinin sort türüne göre aşamalarını yazınız.
+CEVAP 1: 
+1- Dizinin ilk elemanını sıralanmış kısım olarak kabul ederiz.
+2- Dizinin ikinci elemanı başlangıç elemanı olarak seçilir. 
+3- Daha sonra 27 ile 22 kıyas edilir. 27 > 22 olduğu için 22 başta ve 27 ikinci sırada kalır. Dizi aynı şekilde kalır: [22,27,16,2,18,6]
+4- Şimdi de üçüncü eleman olan 16 ile 27 kontrol edilir. 16<27 ancak aynı zamanda 16<22 olduğundan 16 sayısı en başa alınır ve sayılar sırasına göre kaydırılır. Dizinin yeni hali: [16,22,27,2,18,6]
+5- Bu adımda da sıra dördüncü eleman yani 2 sayısına bakmaya gelmiştir. 2 hepsinden küçük olduğu için direkt sola kaya kaya en başa yerleşir ve diğer sayılarda birer sağa kayarak kendi sırasını alırlar. Dizinin son hali: [2,16,22,27,18,6]
+6- Bu adımda sıralanmak üzere bakılacak eleman 18 sayısıdır. 18 sayısı solundaki 27,22,16,2 ile kontrol edilir ve kendi yerine araya girerek dizinin son halini şu şekilde oluşturur: [2,16,18,22,27,6]
+7- Bu adımı son adım olarak düşünebiliriz. Kontrol edilecek olan eleman 6'dır. 6<27, 6<22, 6<18, 6<16 ve 6>2 kontrolü yapılır ve araya girerek kendisine ait olan sırasında yerini alır. Dizinin son hali ise : [2,6,16,18,22,27]
+
+SORU 2: Big-O gösterimini yazınız.
+CEVAP 2:
+1. adım --> n
+2.adım --> n-1
+3.adım --> n-2
+...
+n-1 adım --> 1
+
+Sonuç olarak (n*(n-1))/2 yani O(n^2)
+
+SORU 3: Time Complexity: Dizi sıralandıktan sonra 18 sayısı aşağıdaki case'lerden hangisinin kapsamına girer? Yazınız
+
+Average case: Aradığımız sayının ortada olması
+Worst case: Aradığımız sayının sonda olması
+Best case: Aradığımız sayının dizinin en başında olması.
+
+CEVAP 3: Dizi sıralandıktan sonra [2,6,16,18,22,27] halini alır.Bu durumda 18 sayısı ortada olarak sayılabilir.
+Bu nedenle avarage case kapsamında yer alır. 

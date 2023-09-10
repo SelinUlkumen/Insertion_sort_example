@@ -1,14 +1,21 @@
 [22,27,16,2,18,6] -> Insertion Sort
 
 SORU 1: Yukarı verilen dizinin sort türüne göre aşamalarını yazınız.
+
 CEVAP 1: 
-1- Dizinin ilk elemanını sıralanmış kısım olarak kabul ederiz.
-2- Dizinin ikinci elemanı başlangıç elemanı olarak seçilir. 
-3- Daha sonra 27 ile 22 kıyas edilir. 27 > 22 olduğu için 22 başta ve 27 ikinci sırada kalır. Dizi aynı şekilde kalır: [22,27,16,2,18,6]
-4- Şimdi de üçüncü eleman olan 16 ile 27 kontrol edilir. 16<27 ancak aynı zamanda 16<22 olduğundan 16 sayısı en başa alınır ve sayılar sırasına göre kaydırılır. Dizinin yeni hali: [16,22,27,2,18,6]
-5- Bu adımda da sıra dördüncü eleman yani 2 sayısına bakmaya gelmiştir. 2 hepsinden küçük olduğu için direkt sola kaya kaya en başa yerleşir ve diğer sayılarda birer sağa kayarak kendi sırasını alırlar. Dizinin son hali: [2,16,22,27,18,6]
-6- Bu adımda sıralanmak üzere bakılacak eleman 18 sayısıdır. 18 sayısı solundaki 27,22,16,2 ile kontrol edilir ve kendi yerine araya girerek dizinin son halini şu şekilde oluşturur: [2,16,18,22,27,6]
-7- Bu adımı son adım olarak düşünebiliriz. Kontrol edilecek olan eleman 6'dır. 6<27, 6<22, 6<18, 6<16 ve 6>2 kontrolü yapılır ve araya girerek kendisine ait olan sırasında yerini alır. Dizinin son hali ise : [2,6,16,18,22,27]
+1.adım: ilk sayıdan bahsettiğimiz için ( 22 ) kendi başına sıralıdır. Hiçbir işlem yapmadan devam eder.
+[22 | 27,16,2,18,6]
+2.adım: 27 ile gerisindeki sayı olan 22’yi kıyaslar. 27 sayısı 22'den büyüktür. Herhangi bir değişiklik yapılmaz.
+[22, 27 | 16,2,18,6]
+3.adım: 16 ile bir gerisindeki sayıyı kıyaslar. 16 sayısı 27'den küçüktür. 16 sayısı ile 27 sayısının yerini değiştirir yani swap yapar. Daha sonra tekrar 16 sayısı ile 22'yi kıyaslar. 16 sayısı 22'den de küçüktür. 16 ile 22'yi yer değiştirir.
+[22, 27 | 16,2,18,6] --> [22, 16, 27 | 2,18,6] --> [16, 22, 27 | 2,18,6]
+4.adım: 2 ile bir gerisindeki sayıyı kıyaslar. 2 sayısı 27'den küçüktür. 2 sayısı ile 27 sayısının yeri değişir. Sonra 2 sayısı ile 22 kıyaslanır. 2 sayısı 22'den de küçüktür. 2 ile 22'yi yer değiştirir. En son 2 ile 16 kıyaslanır. 2 sayısı 16'dan da küçüktür. O halde 2 ile 16'da yer değiştirir.
+[16, 22, 27 | 2,18,6] --> [16,22,2,27 | 18,6] --> [16,2,22,27 | 18,6] --> [2,16,22,27 | 18,6]
+5.adım: 18 ile bir gerisindeki sayı kıyaslanır. 18 sayısı 27'den küçüktür. 18 sayısı ile 27 sayısının yeri değişir. Sonra 18 ile 22 kıyaslanır. 18 sayısı 22'den küçüktür. 18 ile 22'nin yeri değişir. Daha sonra 18 ile 16 sayısı kıyaslanır. 18 sayısı 16'dan büyük olduğu için bir değişiklik yapılmaz.
+[2,16,22,27 | 18,6] --> [2,16,22,18,27 | 6] --> [2,16,18,22,27 | 6] --> [2,16,18,22,27 | 6]
+6.adım: 6 sayısı ile bir gerisindeki sayı kıyaslanır. 6 sayısı 27'den küçüktür. 6 sayısı ile 27 sayısının yeri değişir. Sonra 6 ile 22 kıyaslanır. 6 sayısı 22'den küçüktür. 6 ile 22'nin yeri değişir. Daha sonra 6 ile 18 sayısı kıyaslanır. 6 sayısı 18'dan küçüktür. 6 ile 18'in yeri değişir. Sırada 6 ile 16 sayısını kıyaslamak vardır. 6 sayısı 16'dan küçüktür. 6 ile 16 sayısının yeri değişir. En son 6 ile 2 sayısı kıyaslanır. 6 sayısı 2'den büyük olduğu için değişiklik yapılmaz.
+[2,16,18,22,27 | 6] --> [2,16,18,22,6,27 | ] --> [2,16,18,6,22,27 | ] --> [2,16,6,18,22,27 | ] --> [2,6,16,18,22,27 |]
+
 
 SORU 2: Big-O gösterimini yazınız.
 CEVAP 2:
@@ -28,3 +35,16 @@ Best case: Aradığımız sayının dizinin en başında olması.
 
 CEVAP 3: Dizi sıralandıktan sonra [2,6,16,18,22,27] halini alır.Bu durumda 18 sayısı ortada olarak sayılabilir.
 Bu nedenle avarage case kapsamında yer alır. 
+
+
+SORU 4: [7,3,5,8,2,9,4,15,6] dizisinin Insertion Sort'a göre ilk 5 adımını yazınız.
+CEVAP 4:
+1.adım: ilk sayıdan bahsettiğimiz için ( 7 ) kendi başına sıralıdır. Hiçbir işlem yapmadan devam eder.
+2.adım: 3 ile gerisindeki sayı olan 7’yi kıyaslar. 3 sayısı 7'den küçüktür. 3 sayısı ile 7 yer değiştirir.
+[3,7 | 5,8,2,9,4,15,6]
+3.adım: 5 ile bir gerisindeki sayı kıyaslanır. 5 sayısı 7'den küçüktür. 5 ile 7 yer değiştirir. Daha sonra 5 ile 3 sayısı kıyaslanır. 5 sayısı 3'den büyük olduğu için değişiklik yapılmaz.
+[3,7 | 5,8,2,9,4,15,6] --> [3,5,7 | 8,2,9,4,15,6]
+4.adım: 8 ile bir gerisindeki sayı olan 7 kıyaslanır. 8 sayısı 7'den büyüktür. O halde değişiklik yapılmaz.
+[3,5,7 | 8,2,9,4,15,6] --> [3,5,7,8 | 2,9,4,15,6]
+5.adım: 2 ile bir gerisindeki sayı olan 8 kıyaslanır. 2 sayısı 8'den küçüktür. 2 ile 8 yer değiştirir. Sonra 2 ile 7 sayısı kıyaslanır. 2 sayısı 7'den küçüktür. 2 ile 7 yer değiştirir. Daha sonra 2 ile 5 sayısı kıyaslanır. 2 sayısı 5'den küçüktür. 2 ile 5 yer değiştirir. En son 2 ile 3 kıyaslanır. 2 sayısı 3'den de küçüktür. 2 ile 3 yer değiştirir.
+[3,5,7,8 | 2,9,4,15,6] --> [3,5,7,2,8 | 9,4,15,6] --> [3,5,2,7,8 | 9,4,15,6] --> [3,2,5,7,8 | 9,4,15,6] --> [2,3,5,7,8 | 9,4,15,6]
